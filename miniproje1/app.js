@@ -1,3 +1,5 @@
+
+//h3 elementi 
 function rastgeleRenk() {
      const rastgeleDeger = () => Math.floor(Math.random() * 256);
      return `rgb(${rastgeleDeger()}, ${rastgeleDeger()}, ${rastgeleDeger()})`;
@@ -9,13 +11,14 @@ setInterval(() => {
      document.querySelector("span").style.fontSize = "70px";
 }, 1000);
 
+
+//h2 elementi
 const h2 = document.querySelector("h2")
 h2.style.textDecorationLine = "underline";
 h2.style.fontSize = "20px"
 h2.style.fontWeight = "normal"
 
-const h3 = document.createElement("h3");
-h2.parentNode.insertBefore(h3, h2.nextSibling); // h3'ü h2'nin hemen altına ekler
+
 
 
 function saatiGuncelle() {
@@ -39,6 +42,9 @@ function saatiGuncelle() {
      document.querySelector("h3").textContent = tarihSaat;
 }
 
+
+const h3 = document.createElement("h3");
+h2.parentNode.insertBefore(h3, h2.nextSibling); // h3'ü h2'nin hemen altına ekler
 document.querySelector("h3").style.fontSize = "20px";
 h3.style.padding = "10px 20px"
 h3.style.fontWeight = "normal"
@@ -50,25 +56,24 @@ setInterval(() => {
      saatiGuncelle()
 }, 1000);
 
+
+// ul li elementi
 const li = document.querySelectorAll("li");
-li.forEach(li => li.style.listStyleType = "none"
-)
+li.forEach(li => {
+     li.style.listStyleType = "none"
+     li.style.padding = "10px 20px"
+     li.style.width = "500px"
+     li.style.margin = "10px 0"
+     li.style.border = "1px solid #333"
+     li.style.backgroundColor = "lightgreen"
+     if (li.textContent.toLowerCase().includes("done")) {
+          li.style.backgroundColor = "green"
+     } else if (li.textContent.toLowerCase().includes("ongoing")) {
+          li.style.backgroundColor = "yellow"
+     } else {
+          li.style.backgroundColor = "red"
+     }
+})
 
-li.forEach(li => li.style.padding = "10px 20px"
-)
 
-li.forEach(li => li.style.width = "500px"
-)
 
-li.forEach(li => li.style.margin = "10px 0"
-)
-
-li.forEach(li => li.style.border = "1px solid #333"
-)
-
-li[0].style.backgroundColor = "lightgreen"
-li[1].style.backgroundColor = "yellow"
-
-for (let i = 2; i < li.length; i++) {
-     li[i].style.backgroundColor = "red"
-}
